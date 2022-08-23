@@ -1,3 +1,4 @@
+//functionality for selected products
 //custom function
 
 function getAllButtonById(idName) {
@@ -10,13 +11,15 @@ const playerList = document.getElementById("selected-player-list");
 
 getAllButtonById("player").forEach((button) => {
   button.addEventListener("click", function () {
+    let nullSentence = document.getElementById("null");
+    nullSentence.setAttribute("style", "display:none;");
     let playerName = button.parentElement.childNodes[3].innerText;
 
     const li = document.createElement("li");
-    li.innerText = playerName;
+    li.innerText = `${playerList.childElementCount}. ${playerName}`;
     li.className = "text-white text-center";
 
-    if (playerList.childElementCount < 5) {
+    if (playerList.childElementCount < 6) {
       playerList.appendChild(li);
 
       button.setAttribute("disabled", true);
@@ -27,3 +30,5 @@ getAllButtonById("player").forEach((button) => {
     }
   });
 });
+
+//functionality for calculating budget

@@ -36,42 +36,65 @@
       <div class="container mx-auto mt-20 mb-5">
         <div class="flex justify-evenly">
           <div class="grid grid-cols-3 gap-5">
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/messi1.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Lionel Messi</h6>
               <button id="player1" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/neymar.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Neymar Jr</h6>
               <button id="player2" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/mbappe.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Kylian Mbappé</h6>
               <button id="player3" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/vitor.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Vítor Machado</h6>
               <button id="player4" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/ramos.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Sergio Ramos</h6>
               <button id="player5" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
-            <div class="w-[264px] h-[371px] flex flex-col items-center bg-[#151515]">
+            <div class="w-[264px] h-[371px] flex flex-col items-center bg-black">
               <img src="assets/renato.png" class="w-full h-[204px]" alt="" />
               <h6 class="text-2xl text-white text-center mt-4 mb-14">Renato Sanches</h6>
               <button id="player6" class="w-[221px] h-[42px] bg-[#015196] text-white">SELECT</button>
             </div>
           </div>
-          <div class="w-[264px] h-[371px] bg-black">
-            <h6 class="text-white text-3xl text-center mt-[22px] my-5">Selected - V</h6>
-            <ul id="selected-player-list">
-              
-            </ul>
+          <div class="flex flex-col">
+            <div class="w-[264px] h-[371px] bg-black mb-5">
+              <h6 class="text-[#FF5E19] text-3xl text-center mt-[22px] my-5">Selected - V</h6>
+              <ul id="selected-player-list">
+                <li id="null" class="text-white text-center">{No Player Has Been Selected}</li>
+              </ul>
+            </div>
+            <div class="w-[264px] h-[514px] bg-black">
+              <h6 class="text-[#FF5E19] text-3xl text-center mt-[22px] my-5">Budget</h6>
+              <div class="p-2">
+                <div class="my-3">
+                  <label class="text-white" for="per-player-cost">Per Player</label>
+                  <input class="bg-transparent border-[1px] border-white text-white w-2/3" type="text" id="per-player-cost">
+                </div>
+                <button id="calculate-button" class="w-[221px] h-[42px] bg-[#015196] text-white my-5 mx-3">Calculate</button>
+                <span class="text-white">Player Expenses : </span> <span class="text-white ml-7">$<span id="player-expenses" class="text-white">0</span></span>
+                <div class="my-3">
+                  <label class="text-white" for="manager-cost">Manager</label>
+                  <input class="bg-transparent border-[1px] border-white text-white w-2/3" type="text" id="manager-cost">
+                </div>
+                <div class="my-3">
+                  <label class="text-white" for="coach-cost">Coach</label>
+                  <input class="bg-transparent border-[1px] border-white text-white w-2/3" type="text" id="coach-cost">
+                </div>
+                <button id="calculate-button-total" class="w-[221px] h-[42px] bg-[#015196] text-white my-5 mx-3">Calculate Total</button>
+                <span class="text-white">Player Expenses : </span> <span class="text-white ml-7">$<span id="player-expenses" class="text-white">0</span></span>
+              </div>
+            </div>
           </div>
       </div>
     </main>
