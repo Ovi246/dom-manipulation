@@ -32,3 +32,36 @@ getAllButtonById("player").forEach((button) => {
 });
 
 //functionality for calculating budget
+//custom function
+
+function getInputValueById(idName) {
+  const inputObj = document.getElementById(`${idName}`);
+  let inputValue = parseInt(inputObj.value);
+  if (isNaN(inputValue)) {
+    let inputs = document.getElementsByTagName("input");
+    for (const input of inputs) {
+      input.value = "Enter a Number";
+    }
+  }
+  return inputValue;
+}
+
+document
+  .getElementById("calculate-button")
+  .addEventListener("click", function () {
+    let perPlayerCost = getInputValueById("per-player-cost");
+    let playerExpenses = perPlayerCost * (playerList.childElementCount - 1);
+    document.getElementById("player-expenses").innerText = playerExpenses;
+  });
+
+document
+  .getElementById("calculate-button-total")
+  .addEventListener("click", function () {
+    let managerCost = getInputValueById("manager-cost");
+    let coachCost = getInputValueById("coach-cost");
+    let perPlayerCost = getInputValueById("per-player-cost");
+    let playerExpenses = perPlayerCost * (playerList.childElementCount - 1);
+
+    let totalExpenses = managerCost + coachCost + playerExpenses;
+    document.getElementById("total-expenses").innerText = totalExpenses;
+  });
